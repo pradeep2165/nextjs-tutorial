@@ -15,4 +15,4 @@ const index = ({productId=100}) => {
   );
 };
 
-export default index;
+export default index
