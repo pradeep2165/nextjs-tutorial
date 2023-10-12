@@ -1,10 +1,7 @@
-import { useRouter } from "next/router";
+
 
 export default function Post({post}){
-    const router = useRouter()
-    if(router.isFallback){
-        return ( <h1>Loading...</h1>)
-    }
+    
     return(
     <><h2>{post.id} {post.title}</h2>
     <p>{post.body}</p>
@@ -36,8 +33,8 @@ export async function getStaticPaths(){
 
         ],
         // paths,
-        fallback:true //404 error if we search http://localhost:3000/posts/4
-    }
+        fallback:"blocking" 
+       }
 }
 export async function getStaticProps(context){
     const {params} = context
