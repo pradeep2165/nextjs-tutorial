@@ -28,6 +28,7 @@ export async function getServerSideProps(context) {
   const { category } = params;
   const response = await fetch(`http://localhost:4000/news?category=${category}`);
   const data = await response.json();
+  console.log(`pre-rendering news for category ${category}`)
   return {
     props: {
       articles: data,
