@@ -17,20 +17,20 @@ export async function getStaticPaths(){
         }
     })
     return{
-        // paths:[
-        //     {
-        //         params:{postId:'1'}
-        //     },
-        //     {
-        //         params:{postId:'2'}
-        //     },
-        //     {
-        //         params:{postId:'3'}
-        //     }
+        paths:[
+            {
+                params:{postId:'1'}
+            },
+            {
+                params:{postId:'2'}
+            },
+            {
+                params:{postId:'3'}
+            }
 
-        // ],
-        paths,
-        fallback:false
+        ],
+        // paths,
+        fallback:false //404 error if we search http://localhost:3000/posts/4
     }
 }
 export async function getStaticProps(context){
